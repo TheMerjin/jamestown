@@ -1,0 +1,139 @@
+---
+const title = "Jamestown: Culture and Society";
+import Header from '../components/Header.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        line-height: 1.6;
+        color: #222;
+        background: #f9f9f9;
+      }
+      header.page-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.2rem;
+        color: #4a2c0a;
+      }
+      h2 {
+        color: #7b5e1e;
+        margin-top: 2rem;
+      }
+      p {
+        margin-bottom: 1rem;
+      }
+      a {
+        color: #0a58ca;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .highlight {
+        background-color: #ffeeba;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+      footer {
+        margin-top: 3rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #555;
+        border-top: 1px solid #ddd;
+        padding-top: 1rem;
+      }
+      ul.sources {
+        font-size: 0.85rem;
+        color: #444;
+        margin-top: 1rem;
+        padding-left: 1.5rem;
+      }
+      ul.sources li {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+
+    <header class="page-header">
+      <h1>Jamestown: The Legacy</h1>
+      <p><em>A deep dive into the lasting impacts of the first permanent English colony in America.</em></p>
+    </header>
+
+    <section>
+      <h2>Representative Government</h2>
+      <p>
+        Jamestown established the <span class="highlight">first representative assembly</span> in English America, the <em>House of Burgesses</em>, in 1619. This was a groundbreaking step toward <span class="highlight">self-governance</span> and laid the foundation for American democratic ideals.
+      </p>
+      <p>
+        The early settlers included <span class="highlight">gentlemen adventurers</span> unfamiliar with manual labor, which caused tension between the ruling elite and working colonists. Over time, the arrival of skilled craftsmen and laborers helped <span class="highlight">stabilize the colony’s social structure</span>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Relations with Native Americans</h2>
+      <p>
+        Jamestown’s culture was deeply shaped by its interactions with the <span class="highlight">Powhatan Confederacy</span>. These relationships fluctuated between cooperation and violent conflict. The Powhatan people were crucial to Jamestown’s survival during early famines by providing food and sharing knowledge of local agriculture.
+      </p>
+      <p>
+        However, cultural misunderstandings, competition for land, and expanding colonial settlements led to repeated clashes, culminating in the devastating <span class="highlight">Anglo-Powhatan Wars</span>. For a detailed exploration, see the Smithsonian’s <a href="https://americanhistory.si.edu/collections/object-groups/jamestown-1607" target="_blank" rel="noopener noreferrer">Jamestown Collection</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Religion and Daily Life</h2>
+      <p>
+        Religion played an important role in Jamestown culture. The settlers were primarily <span class="highlight">English Anglicans</span>, and church attendance was central to social life and moral discipline. Clergy also provided education and helped maintain order.
+      </p>
+      <p>
+        Life was harsh: disease, starvation, and isolation tested settlers’ endurance. The infamous <span class="highlight">Starving Time</span> (1609–1610) nearly destroyed the colony, but faith and community resilience helped the survivors persevere. Learn more from <a href="https://www.britannica.com/place/Jamestown" target="_blank" rel="noopener noreferrer">Encyclopedia Britannica: Jamestown</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Language and Communication</h2>
+      <p>
+        English was the dominant language, but Jamestown was a multilingual environment. Indigenous Powhatan languages, as well as African languages introduced through enslaved people, contributed to a complex linguistic landscape influencing trade and negotiation.
+      </p>
+      <p>
+        The colony produced some of the earliest English writings in America, such as the journals of Captain John Smith, which provide rich insights into cultural perceptions and daily life.
+      </p>
+    </section>
+
+    <section>
+      <h2>Arts and Traditions</h2>
+      <p>
+        Despite the struggle for survival, settlers kept English customs alive, celebrating traditional holidays, music, and storytelling. Material culture included English-style tools, clothing, and household items adapted to New World conditions.
+      </p>
+      <p>
+        Archaeological finds such as pottery, religious artifacts, and everyday objects reveal how colonists maintained cultural identity. For more on these discoveries, visit the <a href="https://www.nps.gov/jame/learn/historyculture/index.htm" target="_blank" rel="noopener noreferrer">National Park Service: Jamestown Archaeology</a>.
+      </p>
+    </section>
+
+    <footer>
+      <h3>Sources</h3>
+      <ul class="sources">
+        <li><a href="https://www.history.com/topics/colonial-america/jamestown" target="_blank" rel="noopener noreferrer">History.com: Jamestown</a></li>
+        <li><a href="https://americanhistory.si.edu/collections/object-groups/jamestown-1607" target="_blank" rel="noopener noreferrer">Smithsonian Jamestown Collection</a></li>
+        <li><a href="https://www.britannica.com/place/Jamestown" target="_blank" rel="noopener noreferrer">Encyclopedia Britannica: Jamestown</a></li>
+        <li><a href="https://www.nps.gov/jame/learn/historyculture/index.htm" target="_blank" rel="noopener noreferrer">National Park Service: Jamestown Archaeology</a></li>
+        <li><a href="https://www.loc.gov/item/2002691315/" target="_blank" rel="noopener noreferrer">Library of Congress: John Smith's Journals</a></li>
+      </ul>
+      <p>© 2025 APUSH Jamestown project. Not a single right reserved.</p>
+    </footer>
+  </body>
+</html>

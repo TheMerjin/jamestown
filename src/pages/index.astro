@@ -1,16 +1,94 @@
 ---
-
+const title = "Jamstown: The Best English Colony";
+import Header from '../components/Header.astro';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        line-height: 1.6;
+        color: #222;
+        background: #f9f9f9;
+      }
+      header.page-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.2rem;
+        color: #4a2c0a;
+      }
+      h2 {
+        color: #7b5e1e;
+        margin-top: 2rem;
+      }
+      p {
+        margin-bottom: 1rem;
+      }
+      .highlight {
+        background-color: #ffeeba;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+      footer {
+        margin-top: 3rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+
+    <header class="page-header">
+      <h1>Jamstown: The Best English Colony</h1>
+      <p><em>Established in 1607, Jamestown laid the foundation for modern America.</em></p>
+    </header>
+
+    <section>
+      <h2>Historical Significance</h2>
+      <p>
+        Jamestown was the <span class="highlight">first permanent English settlement</span> in North America,
+        setting the stage for English culture and governance on the continent.
+      </p>
+      <p>
+        It survived initial hardships like starvation and conflict, thanks to the resilience and adaptability of its settlers.
+      </p>
+    </section>
+
+    <section>
+      <h2>Economic Innovation</h2>
+      <p>
+        Jamestown pioneered the cultivation of <span class="highlight">tobacco as a cash crop</span>, which
+        became an economic cornerstone for the colony and later the Southern colonies.
+      </p>
+      <p>
+        The introduction of the Headright System also encouraged immigration and growth.
+      </p>
+    </section>
+
+    <section>
+      <h2>Political Legacy</h2>
+      <p>
+        Jamestown established the <span class="highlight">House of Burgesses</span> in 1619,
+        the first representative legislative assembly in the Americas,
+        which laid the groundwork for American democracy.
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2025 APUSH Jamestown colony project. Not a single right reserved.</p>
+    </footer>
+  </body>
 </html>
