@@ -1,14 +1,39 @@
 ---
-// No props needed for now
----
+--- 
 <style>
+  header {
+    background: #fcfaf8;
+    padding: clamp(0.75rem, 2vw, 2rem) 0;
+    text-align: center;
+  }
 
+  nav {
+    max-width: min(600px, 90%);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 4vw, 4rem);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  nav a {
+    color: #7b5e1e;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    padding: 0.25em 0.5em;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
 </style>
-<header style="background:#fcfaf8; padding: 1rem 0; text-align:center;">
-  <nav style="max-width:30%; margin:0 auto; display:flex; justify-content:center; gap:10%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <a href="/" style="color:#7b5e1e; font-weight:700; text-decoration:none;">Home</a>
-    <a href="/culture" style="color: #7b5e1e; font-weight:700; text-decoration:none;">Jamestown Culture</a>
-    <a href="/conflicts" style="color:#7b5e1e; font-weight:700; text-decoration:none;">Conflicts & Relations</a>
-    <a href="/legacy" style="color:#7b5e1e; font-weight:700; text-decoration:none;">Legacy</a>
+
+<header>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/culture">Jamestown Culture</a>
+    <a href="/conflicts">Conflicts & Relations</a>
+    <a href="/legacy">Legacy</a>
   </nav>
 </header>
