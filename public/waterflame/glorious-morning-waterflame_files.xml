@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+  <file name="Glorious Morning.mp3" source="original">
+    <mtime>1667569504</mtime>
+    <size>2215623</size>
+    <md5>b434eff79e465853d50e091820fc793e</md5>
+    <crc32>80dcc5be</crc32>
+    <sha1>67679f34add3f032a1001c0caf19737bf8e43a8e</sha1>
+    <format>VBR MP3</format>
+    <length>110.58</length>
+    <title>-Glorious morning-</title>
+    <creator>Waterflame</creator>
+    <album>Newgrounds Audio Portal - http://www.newgrounds.com/audio</album>
+    <track>01/01</track>
+    <artist>Waterflame</artist>
+    <comment>This track can be found at: http://www.newgrounds.com/audio/listen/91476</comment>
+  </file>
+  <file name="Glorious Morning.png" source="derivative">
+    <format>PNG</format>
+    <original>Glorious Morning.mp3</original>
+    <mtime>1667570841</mtime>
+    <size>38468</size>
+    <md5>3020c1f94d792c154a6c0f0dba6a7b1b</md5>
+    <crc32>e0a2e188</crc32>
+    <sha1>020fe5436f49adc1c5c69e82f20104fea9bf86f6</sha1>
+  </file>
+  <file name="Glorious Morning_spectrogram.png" source="derivative">
+    <format>Spectrogram</format>
+    <original>Glorious Morning.mp3</original>
+    <mtime>1667571298</mtime>
+    <size>340119</size>
+    <md5>3b34db4c63bf8d932c23f72f671af7a2</md5>
+    <crc32>4311322d</crc32>
+    <sha1>5a84301962da2ab47ec6024184ead3b9feaffd7c</sha1>
+  </file>
+  <file name="Waterflame.jpg" source="original">
+    <mtime>1667569520</mtime>
+    <size>49042</size>
+    <md5>7fd5c80efc19d254b999df83d9ea67f1</md5>
+    <crc32>ef3097e7</crc32>
+    <sha1>c2144cf4a9ffaaef27a6848da6219d04588ca05d</sha1>
+    <format>JPEG</format>
+    <rotation>0</rotation>
+  </file>
+  <file name="Waterflame_thumb.jpg" source="derivative">
+    <format>JPEG Thumb</format>
+    <original>Waterflame.jpg</original>
+    <mtime>1667569897</mtime>
+    <size>8384</size>
+    <md5>fa3694a1fe305255a6818ec682bef0d9</md5>
+    <crc32>781bc674</crc32>
+    <sha1>d13c17ab379555910aa23b16fffa30c4973c90b5</sha1>
+  </file>
+  <file name="__ia_thumb.jpg" source="original">
+    <mtime>1667569531</mtime>
+    <size>7858</size>
+    <md5>bb9414f379608837251a8477d7d35105</md5>
+    <crc32>180ed0b4</crc32>
+    <sha1>30cc23f54ded216d8c1f83056130434f9bfa2e5d</sha1>
+    <format>Item Tile</format>
+    <rotation>0</rotation>
+  </file>
+  <file name="glorious-morning-waterflame_archive.torrent" source="metadata">
+    <btih>3fc88c6908439c53022e17af23ded9ec01bc788c</btih>
+    <mtime>1667571626</mtime>
+    <size>2728</size>
+    <md5>562da7e806d87c23d5025d4cf5bda5e2</md5>
+    <crc32>efe0711c</crc32>
+    <sha1>bb5a2e117ed722847056bb3060a4d9156ef05d7d</sha1>
+    <format>Archive BitTorrent</format>
+  </file>
+  <file name="glorious-morning-waterflame_files.xml" source="original">
+    <format>Metadata</format>
+    <md5>cdf0a129660f69ad526bdbdb24cebf57</md5>
+    <summation>md5</summation>
+  </file>
+  <file name="glorious-morning-waterflame_meta.sqlite" source="original">
+    <mtime>1667569525</mtime>
+    <size>28672</size>
+    <md5>b32b816571fda21846994acf3f20bdc3</md5>
+    <crc32>068701e9</crc32>
+    <sha1>4ff85fb349bc950d541a962f993fd4142905c3ec</sha1>
+    <format>Metadata</format>
+  </file>
+  <file name="glorious-morning-waterflame_meta.xml" source="original">
+    <mtime>1667571606</mtime>
+    <size>1611</size>
+    <md5>56474987426c604d538a17b65fb1813b</md5>
+    <crc32>6c2967f6</crc32>
+    <sha1>e10fd1f9801481c5a016ca49401c125d1bfa2e5c</sha1>
+    <format>Metadata</format>
+  </file>
+</files>
