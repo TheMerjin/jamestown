@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { supabase } from "../supabaseClient.js"
+import InputForm from "./inputForm.jsx";
 
 const MAX_RESOURCE = 20;
 
@@ -591,8 +591,8 @@ function useAudioFade(url, play, fadeDuration = 3000) {
   return audioRef.current;
 }
   function DragonHuntMinigame({ onComplete }) {
-   const [canShoot, setCanShoot] = React.useState(true);
-  const shootCooldown = 300; // milliseconds cooldown between shots
+    const [canShoot, setCanShoot] = React.useState(true);
+    const [seconds, setSeconds] = useState(0); // milliseconds cooldown between shots
 
   const [playerY, setPlayerY] = React.useState(1); // 0=top,1=middle,2=bottom lane
   const [fireballs, setFireballs] = React.useState([]); // array of {x: number, y: lane}
@@ -610,15 +610,15 @@ function useAudioFade(url, play, fadeDuration = 3000) {
 
   // Sprites URLs
   const hunterSprite =
-    "https://img.freepik.com/premium-vector/pixel-art-cowboy-riding-horse-retro-video-game-character-8-bit-style-with-green-hat_1292377-14344.jpg";
+    "/images/pixel-art-cowboy-riding-horse-retro-video-game-character-8-bit-style-with-green-hat_1292377-14344.jpg";
   const dragonSprite =
-    "https://static.vecteezy.com/system/resources/previews/019/974/822/large_2x/pixel-art-flying-dragon-dragon-pixel-illustration-cartoon-monster-pixel-design-free-vector.jpg";
+    "/images/pixel-art-flying-dragon-dragon-pixel-illustration-cartoon-monster-pixel-design-free-vector.jpg"
   const fireballSprite =
-    "https://img.freepik.com/premium-vector/fire-pixel-art_158677-1816.jpg";
+    "images/fire-pixel-art_158677-1816.png";
 
   // Game dimensions
   const gameWidth = 800;
-  const gameHeight = 500;
+  const gameHeight = 550;
    const laneHeight = gameHeight / lanes;
   useAudioFade("/waterflame/Glorious Morning.mp3", true, 3000);
 
@@ -643,7 +643,15 @@ function useAudioFade(url, play, fadeDuration = 3000) {
 
   return () => clearInterval(intervalId);
 }, [gameState, lanes]);
+useEffect(() => {
+    // Create an interval to increment the timer every second
+    const interval = setInterval(() => {
+      setSeconds((prevSeconds) => prevSeconds + 1);
+    }, 1000);
 
+    // Cleanup function to clear the interval when the component unmounts or rerenders
+    return () => clearInterval(interval);
+  }, []);
   // Keyboard controls
   React.useEffect(() => {
     function handleKeyDown(e) {
@@ -715,7 +723,19 @@ function useAudioFade(url, play, fadeDuration = 3000) {
     setDragonY(randNum);
     let timeoutId;
     function shootFireball() {
-      const lane = Math.floor(Math.random() * lanes);
+      let lane = Math.floor(Math.random() * 9) + 1;
+      if (lane > 5) {
+        lane = playerYRef.current;
+      }
+      if (Math.random() > 0.9) {
+        const player_pos = playerYRef.current;
+        let above = (player_pos - 1) % 5;
+        let below = (player_pos + 1) % 5;
+        setFireballs((fbs) => [...fbs, { x: gameWidth - 60, y: above, increment: 20 }]);
+        setFireballs((fbs) => [...fbs, { x: gameWidth - 60, y: below, increment : 20}]);
+        
+      }
+      
       function randNormal(mean = 1, stddev = 0.3) {
         let u = 0, v = 0;
         while (u === 0) u = Math.random(); // Convert [0,1) to (0,1)
@@ -725,7 +745,7 @@ function useAudioFade(url, play, fadeDuration = 3000) {
 }
       const randNormalNum = Math.max(0.3, randNormal());
       setFireballs((fbs) => [...fbs, { x: gameWidth - 60, y: lane, increment : randNormalNum* 20}]);
-      timeoutId = setTimeout(shootFireball, 200 + Math.random()* 1000);
+      timeoutId = setTimeout(shootFireball, 50 +  Math.random()*500);
     }
     shootFireball();
 
@@ -811,7 +831,7 @@ function useAudioFade(url, play, fadeDuration = 3000) {
           position: "relative",
           width: gameWidth,
           height: gameHeight,
-          backgroundColor: "#222",
+          backgroundColor: "#f5f5f5ff",
           borderRadius: 12,
           overflow: "hidden",
           boxShadow: "0 0 12px #e25822",
@@ -896,7 +916,7 @@ function useAudioFade(url, play, fadeDuration = 3000) {
             userSelect: "none",
           }}
         >
-          Hits to dragon: {dragonHits} / 20 &nbsp;&nbsp; Hits to player: {playerHits} / 5
+          Hits to dragon: {dragonHits} / 20 &nbsp;&nbsp; Hits to player: {playerHits} / 5 Timer {seconds}
         </div>
       </div>
 
@@ -929,7 +949,10 @@ function useAudioFade(url, play, fadeDuration = 3000) {
       {gameState === "won" && (
         <div style={{ marginTop: 20, color: "lime", fontWeight: "700", fontSize: "1.4rem" }}>
           You defeated the dragon! 🐉🎉
+          <InputForm/>
         </div>
+        
+        
       )}
       {gameState === "lost" && (
         <div style={{ marginTop: 20, color: "tomato", fontWeight: "700", fontSize: "1.4rem" }}>
