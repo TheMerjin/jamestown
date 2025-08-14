@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { supabase } from "../supabaseClient.js"
 
 const MAX_RESOURCE = 20;
 
@@ -183,6 +184,17 @@ const styles = {
     userSelect: "none",
   }
 };
+async function addScore(playerName, score) {
+  const { data, error } = await supabase
+    .from('scores')
+    .insert([{ player_name: playerName, score }]);
+
+  if (error) {
+    console.error('Error adding score:', error);
+    return null;
+  }
+  return data;
+}
 
 const emojis = {
   food: "🍎",
