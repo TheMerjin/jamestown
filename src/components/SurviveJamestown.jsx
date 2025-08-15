@@ -234,6 +234,7 @@ function getAsciiArt(health, morale) {
 }
 
 export default function SurviveJamestown({ startDay = 1, goalDays = 10 }) {
+  
   const getInitialState = () => ({
     day: startDay,
     food: 10,
@@ -252,6 +253,8 @@ export default function SurviveJamestown({ startDay = 1, goalDays = 10 }) {
   });
 
   const [state, setState] = useState(getInitialState);
+  const [showInputForm, setShowInputForm] = useState(false); 
+  const [wonTime, setWonTime] = useState(100000000000);
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -592,7 +595,9 @@ function useAudioFade(url, play, fadeDuration = 3000) {
 }
   function DragonHuntMinigame({ onComplete }) {
     const [canShoot, setCanShoot] = React.useState(true);
-    const [seconds, setSeconds] = useState(0); // milliseconds cooldown between shots
+    const [time, setTime] = useState(0);
+    const [seconds, setSeconds] = useState(0);
+    // milliseconds cooldown between shots
 
   const [playerY, setPlayerY] = React.useState(1); // 0=top,1=middle,2=bottom lane
   const [fireballs, setFireballs] = React.useState([]); // array of {x: number, y: lane}
@@ -601,7 +606,6 @@ function useAudioFade(url, play, fadeDuration = 3000) {
   const [playerHits, setPlayerHits] = React.useState(0);
   const [gameState, setGameState] = React.useState("start");
   const [dragonY, setDragonY] = React.useState(1);
-  const [time, setTime] = React.useState(0);
   const lastShotTime = useRef(0); // keeps value across renders but doesn't trigger re-renders
   const fireCooldown = 400; // ms between shots
    // start, playing, won, lost
@@ -723,11 +727,11 @@ useEffect(() => {
     setDragonY(randNum);
     let timeoutId;
     function shootFireball() {
-      let lane = Math.floor(Math.random() * 9) + 1;
+      let lane = Math.floor(Math.random() * 6) + 1;
       if (lane > 5) {
         lane = playerYRef.current;
       }
-      if (Math.random() > 0.9) {
+      if (Math.random() > 0.7) {
         const player_pos = playerYRef.current;
         let above = (player_pos - 1) % 5;
         let below = (player_pos + 1) % 5;
@@ -791,7 +795,7 @@ useEffect(() => {
       // Check win/loss condition
       if (dragonHits + hitsToDragon >= 20) {
         setGameState("won");
-      } else if (playerHits + hitsToPlayer >= 5) {
+      } else if (playerHits + hitsToPlayer >= 100000) {
         setGameState("lost");
       }
     }
@@ -803,7 +807,7 @@ useEffect(() => {
   // When game ends, wait 2 seconds then call onComplete with result
   React.useEffect(() => {
     if (gameState === "won") {
-      const t = setTimeout(() => onComplete(true), 2000);
+      const t = setTimeout(() => onComplete(true, seconds), 2000);
       return () => clearTimeout(t);
       
     } else if (gameState === "lost") {
@@ -916,7 +920,7 @@ useEffect(() => {
             userSelect: "none",
           }}
         >
-          Hits to dragon: {dragonHits} / 20 &nbsp;&nbsp; Hits to player: {playerHits} / 5 Timer {seconds}
+          Hits to dragon: {dragonHits} / 20 &nbsp;&nbsp; Hits to player: {playerHits} / 5 Timer: {seconds}
         </div>
       </div>
 
@@ -1147,7 +1151,7 @@ useEffect(() => {
       )}
       {state.minigame === "dragon" && (
         <DragonHuntMinigame
-          onComplete={(won) => {
+          onComplete={(won, time) => {
             if (won) {
               updateGameResources({
                 ...state,
@@ -1156,6 +1160,9 @@ useEffect(() => {
                 gameOver: true,
                 minigame: null,
               });
+              console.log(time);
+              setWonTime(time);
+              setShowInputForm(true);
             } else {
               updateGameResources({
                 ...state,
@@ -1168,6 +1175,7 @@ useEffect(() => {
           }}
         />
       )}
+      {showInputForm && <InputForm time = {wonTime} />}
 
       {state.gameOver && (
         <button

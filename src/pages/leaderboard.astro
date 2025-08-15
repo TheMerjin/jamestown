@@ -1,20 +1,15 @@
 ---
-import SurviveJamestown from '../components/SurviveJamestown.jsx';
-import Header from '../components/header.astro';
-import Leaderboard from '../components/leaderboard';
-const response = await fetch('http://localhost:4321/api/get_leaderboard');
+const response = await fetch('https://jamestownapush.vercel.app/api/get_leaderboard');
 const data = await response.json();
 
 if (!response.ok) {
   throw new Error('Failed to fetch leaderboard data');
 }
-export const prerender = false;
 ---
 
-<Header/>
-<SurviveJamestown startDay={1} goalDays={10} client:load />
-
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leaderboard</title>
@@ -23,13 +18,9 @@ export const prerender = false;
       body {
         font-family: 'Courier New', Courier, monospace;
         background-color: #f5f5f5;
-        width: 80%;
-        align-items: center;
-        align-self: center;
         color: #333;
         margin: 0;
         padding: 0;
-        margin-left: 10%;
       }
 
       h1 {
@@ -44,7 +35,6 @@ export const prerender = false;
         width: 80%;
         margin: 30px auto;
         border-collapse: collapse;
-        overflow-x: auto; /* Enable scrolling on small screens */
       }
 
       table, th, td {
@@ -82,58 +72,15 @@ export const prerender = false;
         text-align: center;
       }
 
+      /* Simple footer for the retro feel */
       footer {
         text-align: center;
         font-size: 0.9rem;
         color: #777;
         margin-top: 30px;
       }
-
-      /* Mobile Responsiveness */
-      @media screen and (max-width: 768px) {
-        body {
-          width: 95%;
-          margin-left: 2.5%;
-        }
-
-        h1 {
-          font-size: 1.5rem; /* Smaller header on mobile */
-        }
-
-        table {
-          width: 100%; /* Make table full width on mobile */
-        }
-
-        th, td {
-          padding: 8px; /* Slightly smaller padding for mobile */
-        }
-
-        footer {
-          font-size: 0.8rem;
-        }
-
-        .leaderboard-table {
-          font-size: 0.9rem; /* Slightly smaller font size for better readability */
-        }
-      }
-
-      /* Very small mobile screens */
-      @media screen and (max-width: 480px) {
-        h1 {
-          font-size: 1.2rem;
-        }
-
-        table {
-          font-size: 0.8rem; /* Smaller table font size on very small screens */
-        }
-
-        th, td {
-          padding: 6px; /* Even smaller padding on very small screens */
-        }
-      }
     </style>
   </head>
-
   <body>
     <h1>Leaderboard</h1>
     <table class="leaderboard-table">
@@ -158,6 +105,7 @@ export const prerender = false;
     </table>
 
     <footer>
-      <p>&copy; 2025 Sreek. Not a single on of the rights reserved. Code available here : <a href="https://github.com/TheMerjin/jamestown" target="_blank">GitHub</a></p>
+      <p>&copy; 2025 Your Game. All rights reserved.</p>
     </footer>
   </body>
+</html>
