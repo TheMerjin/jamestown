@@ -16,7 +16,7 @@ const InputForm = ({ time }) => {
 
     try {
       // Send data to the backend
-      const response = await fetch(`https://jamestownapush.vercel.app/api/post_leaderboard`, {
+      const response = await fetch(`http://localhost:4321/api/post_leaderboard`, {
         method: 'POST', // POST method for sending data
         headers: {
           'Content-Type': 'application/json', // Send data as JSON
