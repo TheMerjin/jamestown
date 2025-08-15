@@ -795,7 +795,7 @@ useEffect(() => {
       // Check win/loss condition
       if (dragonHits + hitsToDragon >= 20) {
         setGameState("won");
-      } else if (playerHits + hitsToPlayer >= 100000) {
+      } else if (playerHits + hitsToPlayer >= 15) {
         setGameState("lost");
       }
     }
@@ -920,7 +920,7 @@ useEffect(() => {
             userSelect: "none",
           }}
         >
-          Hits to dragon: {dragonHits} / 20 &nbsp;&nbsp; Hits to player: {playerHits} / 5 Timer: {seconds}
+          Hits to dragon: {dragonHits} / 25 &nbsp;&nbsp; Hits to player: {playerHits} / 15 Timer: {seconds}
         </div>
       </div>
 
