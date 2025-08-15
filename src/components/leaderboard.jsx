@@ -10,7 +10,7 @@ const Leaderboard = () => {
     const fetchLeaderboard = async () => {
         try {
             console.log("fetching data");
-        const response = await fetch('http://localhost:4321/api/get_leaderboard');
+        const response = await fetch('https://jamestownapush.vercel.app/api/get_leaderboard');
         const data = await response.json();
 
         if (data.success) {
