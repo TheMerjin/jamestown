@@ -1,15 +1,13 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
+
 import react from '@astrojs/react';
 
-// https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',  // Choose the output mode for your project
-  integrations: [
-    react()  // Integrating React into Astro
-  ],
-  adapter: vercel({
-    edgeMiddleware: true,  // Enabling edge middleware for Vercel
-  }),
+  output: 'server',
+
+  // This automatically picks the right mode for Vercel
+  adapter: vercel(),
+
+  integrations: [react()]
 });
