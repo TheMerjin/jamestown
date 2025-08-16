@@ -4,6 +4,8 @@ import Header from '../components/header.astro';
 import Leaderboard from '../components/leaderboard';
 const response = await fetch('https://jamestownapush.vercel.app/api/get_leaderboard');
 const data = await response.json();
+console.log(data);
+data.leaderboard.sort((a,b) => a.Time- b.Time);
 
 
 
@@ -13,7 +15,7 @@ if (!response.ok) {
 function time (data){
   return data.Time
 }
-data.sort((a,b) => time(a) - time(b) )
+
 export const prerender = false;
 ---
 
