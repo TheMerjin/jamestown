@@ -793,7 +793,7 @@ useEffect(() => {
       setPlayerShots(newShots);
 
       // Check win/loss condition
-      if (dragonHits + hitsToDragon >= 20) {
+      if (dragonHits + hitsToDragon >= 25sadas) {
         setGameState("won");
       } else if (playerHits + hitsToPlayer >= 10) {
         setGameState("lost");
