@@ -59,7 +59,7 @@ function SidebarComments() {
         display: "flex",
         flexDirection: "column",
         gap: "0.8rem",
-        height: "500px",
+        height: "80%",
         margin: "1rem",
         border: "1px solid #ddd",
         borderRadius: "6px",
@@ -98,8 +98,8 @@ function SidebarComments() {
               boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
             }}
           >
-            <div style={{ fontSize: "0.75rem", color: "#666", marginBottom: "0.2rem" }}>
-              {new Date(c.time).toLocaleString()} - {c.username}
+            <div style={{ fontSize: "0.8rem", color: "#666", marginBottom: "0.2rem" }}>
+              {c.username} - {new Date(c.time).toLocaleString()} - 
             </div>
             <div style={{ fontSize: "0.95rem", color: "#222", lineHeight: "1.5" }}>{c.content}</div>
           </div>
