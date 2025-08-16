@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 const InputForm = ({ time }) => {
   // State to hold input data
   const [name, setName] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
   // Handle input changes
   const handleNameChange = (e) => setName(e.target.value);
@@ -35,8 +36,17 @@ const InputForm = ({ time }) => {
     } catch (error) {
       console.error('Error:', error);
     }
+    setSubmitted(true);
   };
-
+  if (submitted) {
+    return (
+      <div>
+        <h1>Submission Successful!</h1>
+        <p>Thank you for your submission, {name}!</p>
+      </div>
+    );
+  }
+  
   return (
     <div>
       <h1>Submit to Leaderboard</h1>
