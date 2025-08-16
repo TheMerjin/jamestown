@@ -1,43 +1,50 @@
-# Astro Starter Kit: Minimal
+# Jamestown
 
-```sh
-npm create astro@latest -- --template minimal
+Jamestown is a web-based educational and interactive experience. It is structured to provide both gameplay and informational content, separating core mechanics from contextual pages. The site is minimal, functional, and designed for clarity.
+
+## Pages
+
+- **Home** – General context, introduction to Jamestown, and overview of the site’s purpose.
+- **Culture** – Insights into the social and cultural life within the Jamestown scenario.
+- **Relation Tips** – Practical advice for navigating interpersonal dynamics in the game context.
+- **Legacy** – Discussion of outcomes, consequences, and how choices propagate over time.
+- **Game** – The interactive survival component where users make decisions and see results.
+- **Leaderboard** – Displays performance metrics of users sorted by time or score, updated dynamically.
+
+## Structure
+
+- `src/components/` – Contains UI elements such as the game board, leaderboard, and header.
+- `src/pages/` – Astro pages for routing, connecting components and content.
+- `public/` – Static assets like images or icons.
+
+## Getting Started
+
+1. Install dependencies:
+```bash
+npm install astro
+npx install react 
+
+
 ```
+npm run dev
+Visit http://localhost:4321 to access the site locally.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Data Flow
 
-## 🚀 Project Structure
+Game actions produce results stored via backend endpoints.
 
-Inside of your Astro project, you'll see the following folders and files:
+Leaderboard fetches, sorts, and displays user data.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Components remain decoupled for clarity and predictable behavior.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Purpose
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+The site combines interactive gameplay with informational context. Each page and component is designed to be legible, modular, and extendable. The goal is to provide an experience that is both instructive and functional, without unnecessary complexity.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Contributing
 
-## 🧞 Commands
+Report issues or suggest improvements.
 
-All commands are run from the root of the project, from a terminal:
+Pull requests should maintain clarity and modularity.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Contributions should respect the minimal and transparent structure of the project.
