@@ -5,6 +5,11 @@ import Leaderboard from '../components/leaderboard';
 const response = await fetch('https://jamestownapush.vercel.app/api/get_leaderboard');
 const data = await response.json();
 
+function time (data){
+  return data.Time
+}
+data.sort((a,b) => time(a) - time(b) )
+
 if (!response.ok) {
   throw new Error('Failed to fetch leaderboard data');
 }
