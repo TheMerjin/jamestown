@@ -58,9 +58,9 @@ function SidebarComments() {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "0.8rem",
-        height: "80%",
-        margin: "1rem",
+              gap: "0.8rem",
+        marginTop : "2rem",
+        height: "85%",
         border: "1px solid #ddd",
         borderRadius: "6px",
         backgroundColor: "#fafafa",
